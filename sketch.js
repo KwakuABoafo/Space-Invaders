@@ -33,7 +33,7 @@ function setup () {
   score = 0;
 
   playerX = 350;
-  playerY = 650;
+  playerY = 600;
 
   toLeft = alienX + (newFirstColumn + 1) * 40;
   toRight = alienX + (newLastColumn + 1) * 40;
@@ -42,7 +42,7 @@ function setup () {
 
 function draw () {
   if (!gameMode) {
-      textSize(20);
+    textSize(20);
     stroke('White');
     strokeWeight(8);
     fill(0);
@@ -52,7 +52,11 @@ function draw () {
     rect(200, 250, 150, 150);
     rect(200, 250, 50, 30);
     fill(255);
-    text('Click to start game.', 250, 310);
+    fill("black");
+    rect(300, 305, 100, 10); // this rect covers a piece of the background image 
+                             // that doesn't look asthetically pleasing
+    fill("white") 
+    text('Press Enter to start the game.', 230, 350);
   }else {
     if (!theme.isPlaying()) {
       theme.play();
@@ -90,12 +94,6 @@ function playerMovement () {
   }
   if (keyIsDown(LEFT_ARROW) && playerX > -15) {
     playerX -= 5;
-  }
-  if (keyIsDown(UP_ARROW)) {
-    playerY -= 5;
-  }
-  if (keyIsDown(DOWN_ARROW)) {
-    playerY += 5;
   }
   image(playerShip, playerX, playerY);
 }

@@ -6,4 +6,4 @@ A Web-Based Version of the arcade Space-Invaders arcade game made using the p5.j
 • Used Basic HTML (For p5.js setup)
 
 # Usage 
-To try out the Project please visit the the link    
+To try out the project please visit the the link
